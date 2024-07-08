@@ -13,13 +13,14 @@ public interface FruitRepository extends JpaRepository<Fruit,Long> {
 
 
     @Query("SELECT f FROM Fruit f ORDER BY f.price DESC")
-    List<Fruit> fruitByPriceDesc();
+    List<Fruit> getByPriceDesc();
 
     @Query("SELECT f FROM Fruit f ORDER BY f.price ASC")
-    List<Fruit> fruitByPriceAsc();
+    List<Fruit> getByPriceAsc();
 
     @Query("SELECT f FROM Fruit f WHERE f.name like %:name%")
-    List<Fruit> fruitByName(String name);
+    List<Fruit> searchByName(String name);
 
-
+    @Query("DELETE FROM Fruit f WHERE f.id = :id")
+    Fruit delete(long id);
 }

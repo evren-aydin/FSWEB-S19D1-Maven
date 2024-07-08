@@ -15,5 +15,5 @@ public interface FruitService {
     List<Fruit> getByPriceAsc();
     List<Fruit> searchByName(String name);
 
-    void delete(long id);
+    Fruit delete(long id);
 }

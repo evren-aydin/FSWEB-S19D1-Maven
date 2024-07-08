@@ -42,22 +42,22 @@ public class FruitServiceImpl implements FruitService{
 
     @Override
     public List<Fruit> getByPriceDesc() {
-        return fruitRepository.fruitByPriceDesc();
+        return fruitRepository.getByPriceDesc();
     }
 
     @Override
     public List<Fruit> getByPriceAsc() {
-        return fruitRepository.fruitByPriceAsc();
+        return fruitRepository.getByPriceAsc();
     }
 
     @Override
     public List<Fruit> searchByName(String name) {
-        return fruitRepository.fruitByName(name);
+        return fruitRepository.searchByName(name);
 
     }
 
     @Override
-    public void delete(long id) {
-         fruitRepository.deleteById(id);
+    public Fruit delete(long id) {
+        return fruitRepository.delete(id);
     }
 }
