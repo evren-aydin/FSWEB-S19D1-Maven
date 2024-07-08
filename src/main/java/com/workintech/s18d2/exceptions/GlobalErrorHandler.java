@@ -10,9 +10,9 @@ public class GlobalErrorHandler {
 
 
     @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleException (FruitAndVegetableException fruitAndVegetableException){
-        ErrorResponse errorResponse = new ErrorResponse(fruitAndVegetableException.getMessage());
-        return new ResponseEntity<>(errorResponse,fruitAndVegetableException.getHttpStatus());
+    public ResponseEntity<ErrorResponse> handleException (PlantException plantException){
+        ErrorResponse errorResponse = new ErrorResponse(plantException.getMessage());
+        return new ResponseEntity<>(errorResponse, plantException.getHttpStatus());
     }
 
     @ExceptionHandler

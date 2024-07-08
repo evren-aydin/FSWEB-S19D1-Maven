@@ -30,27 +30,27 @@ public class FruitController {
 
     @GetMapping
     public List<Fruit> fruitsByPriceAsc(){
-        return fruitService.fruitByPriceAsc();
+        return fruitService.getByPriceAsc();
     }
     @GetMapping("/{id}")
     public Fruit fruitById(@PathVariable long id){
         Validation.isIdNotValid(id);
-        return fruitService.findById(id);
+        return fruitService.getById(id);
 
     }
 
     @GetMapping("/desc")
     public List<Fruit> fruitsByPriceDesc(){
-        return fruitService.fruitByPriceDesc();
+        return fruitService.getByPriceDesc();
     }
 
     @PostMapping("/{name}")
     public List<Fruit> fruitsByName(@PathVariable String name){
-        return fruitService.fruitByName(name);
+        return fruitService.searchByName(name);
     }
     @DeleteMapping("/{id}")
     public void deleteData(@Valid @PathVariable long id){
-        fruitService.deleteData(id);
+        fruitService.delete(id);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.workintech.s18d2.validations;
 
-import com.workintech.s18d2.exceptions.FruitAndVegetableException;
+import com.workintech.s18d2.exceptions.PlantException;
 import org.springframework.http.HttpStatus;
 
 public class Validation {
@@ -10,7 +10,7 @@ public class Validation {
 
     public static void isIdNotValid(long id) {
         if (id < 0) {
-            throw new FruitAndVegetableException(ID_IS_NOT_VALID, HttpStatus.BAD_REQUEST);
+            throw new PlantException(ID_IS_NOT_VALID, HttpStatus.BAD_REQUEST);
         }
     }
 }

@@ -10,10 +10,10 @@ public interface FruitService {
     Fruit save(Fruit fruit);
     List<Fruit> findAll();
 
-    Fruit findById(long id);
-    List<Fruit> fruitByPriceDesc();
-    List<Fruit> fruitByPriceAsc();
-    List<Fruit> fruitByName(String name);
+    Fruit getById(long id);
+    List<Fruit> getByPriceDesc();
+    List<Fruit> getByPriceAsc();
+    List<Fruit> searchByName(String name);
 
-    void deleteData(long id);
+    void delete(long id);
 }

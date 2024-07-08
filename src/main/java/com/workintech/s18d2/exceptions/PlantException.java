@@ -4,11 +4,11 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 @Data
-public class FruitAndVegetableException extends RuntimeException{
+public class PlantException extends RuntimeException{
 
     private HttpStatus httpStatus;
 
-    public FruitAndVegetableException(String message, HttpStatus httpStatus) {
+    public PlantException(String message, HttpStatus httpStatus) {
         super(message);
         this.httpStatus = httpStatus;
     }

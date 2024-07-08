@@ -29,7 +29,7 @@ public class FruitServiceImpl implements FruitService{
     }
 
     @Override
-    public Fruit findById(long id) {
+    public Fruit getById(long id) {
         Optional<Fruit> fruitOptional= fruitRepository.findById(id);
 
         if(fruitOptional.isPresent()){
@@ -41,23 +41,23 @@ public class FruitServiceImpl implements FruitService{
 
 
     @Override
-    public List<Fruit> fruitByPriceDesc() {
+    public List<Fruit> getByPriceDesc() {
         return fruitRepository.fruitByPriceDesc();
     }
 
     @Override
-    public List<Fruit> fruitByPriceAsc() {
+    public List<Fruit> getByPriceAsc() {
         return fruitRepository.fruitByPriceAsc();
     }
 
     @Override
-    public List<Fruit> fruitByName(String name) {
+    public List<Fruit> searchByName(String name) {
         return fruitRepository.fruitByName(name);
 
     }
 
     @Override
-    public void deleteData(long id) {
-        fruitRepository.deleteById(id);
+    public void delete(long id) {
+         fruitRepository.deleteById(id);
     }
 }

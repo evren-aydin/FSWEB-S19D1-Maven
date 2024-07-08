@@ -20,4 +20,6 @@ public interface FruitRepository extends JpaRepository<Fruit,Long> {
 
     @Query("SELECT f FROM Fruit f WHERE f.name like %:name%")
     List<Fruit> fruitByName(String name);
+
+
 }
