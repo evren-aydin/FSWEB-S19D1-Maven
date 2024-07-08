@@ -18,7 +18,7 @@ public class Fruit {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
     @Min(value = 0,message = "id 0'dan küçük olamaz!!")
-    @NotBlank(message = "id alanı kesinlikle boş olamaz")
+    @NotNull(message = "id alanı kesinlikle boş olamaz")
     private Long id;
     @NotNull
     @Column(name="name")
@@ -26,6 +26,7 @@ public class Fruit {
     @Column(name="price")
     private double price;
     @Column(name="fruit_type")
+    @Enumerated(EnumType.STRING)
     private FruitType fruitType;
 
 }

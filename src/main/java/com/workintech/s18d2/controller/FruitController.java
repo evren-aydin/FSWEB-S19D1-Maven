@@ -3,6 +3,7 @@ package com.workintech.s18d2.controller;
 
 import com.workintech.s18d2.entity.Fruit;
 import com.workintech.s18d2.services.FruitService;
+import com.workintech.s18d2.validations.Validation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -33,7 +34,9 @@ public class FruitController {
     }
     @GetMapping("/{id}")
     public Fruit fruitById(@PathVariable long id){
+        Validation.isIdNotValid(id);
         return fruitService.findById(id);
+
     }
 
     @GetMapping("/desc")
